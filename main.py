@@ -39,7 +39,7 @@ def get_weather(region):
     key = config["weather_key"]
     region_url = "https://geoapi.qweather.com/v2/city/lookup?location={}&key={}".format(region, key)
     print(region_url)
-    response = get(region_url, headers=headers, timeout=30).json()
+    response = get(region_url, headers=headers, timeout=60).json()
     print(response)
     if response["code"] == "404":
         print("推送消息失败，请检查地区名是否有误！")
